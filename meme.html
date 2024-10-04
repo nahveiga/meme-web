@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json"/>
+    <title>Descubra</title>
+
+    <style>
+        body {
+            background-color: black;
+
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        #button {
+            display: flex;
+            width: 150px;
+            margin-top: 20px auto;
+
+        }
+
+        /* ver dps */
+        <style>body {
+            background-color: black;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+        }
+
+        #button {
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            margin: 20px auto;
+        }
+
+        button {
+            width: 150px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        #meme_1,
+        #meme_2,
+        #meme_3,
+        #meme_4,
+        #meme_5,
+        #meme_6,
+        #meme_7,
+        #meme_8,
+        #meme_9,
+        #meme_10 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid white;
+            width: 250px;
+            height: 250px;
+            text-align: center;
+            line-height: 250px;
+            color: white;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            cursor: pointer;
+        }
+
+        #memes {
+            display: grid;
+            grid-template-columns: repeat(2, 0.4fr);
+            gap: 10px;
+            justify-content: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        p {
+            color: white;
+            text-align: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="introducao">
+        <h1>Descubra o meme da Gretchen... se conseguir</h1>
+        <p>Desbloqueie cada meme em um modo diferente :)</p>
+    </div>
+    <hr>
+
+    <div id="memes">
+        <div id="meme_1">
+            <p>Descubra o meme escondido...</p>
+        </div>
+        <div id="meme_2">
+            <p>Descubra o meme escondido...</p>
+        </div>
+        <div id="meme_3">
+            <p>Descubra o meme escondido...</p>
+        </div>
+        <div id="meme_4">
+            <p>Descubra o meme escondido...</p>
+        </div>
+        <div id="meme_5">
+            <p>Descubra o meme escondido...</p>
+        </div>
+        <div id="meme_6">
+            <p>Descubra o meme escondido...</p>
+        </div>
+        <div id="meme_7">
+            <p>Descubra o meme escondido...</p>
+        </div>
+        <div id="meme_8">
+            <p>Descubra o meme escondido...</p>
+        </div>
+        <div id="meme_9">
+            <p>Descubra o meme escondido...</p>
+        </div>
+
+        <div id="meme_10">
+            <p>Descubra o meme escondido...</p>
+        </div>
+
+
+    </div>
+
+    <div id="button">
+        <button id="button" type="button">Veja todos os memes!</button>
+    </div>
+
+</body>
+<script>
+    // declara as variaveis e identifica de qual elemento está buscando a variavel
+    var meme_1 = window.document.getElementById('meme_1')
+    var meme_2 = window.document.getElementById('meme_2')
+    var meme_3 = window.document.getElementById('meme_3')
+    var meme_4 = window.document.getElementById('meme_4')
+    var meme_5 = window.document.getElementById('meme_5')
+    var meme_6 = window.document.getElementById('meme_6')
+    var meme_7 = window.document.getElementById('meme_7')
+    var meme_8 = window.document.getElementById('meme_8')
+    var meme_9 = window.document.getElementById('meme_9')
+    var meme_10 = window.document.getElementById('meme_10')
+    var button = window.document.getElementById('button')
+
+    // informa os eventos de acordo com as variaveis e nomeia as function() 
+    meme_1.addEventListener('click', clicar_revela)
+    meme_1.addEventListener('mouseenter', entrar_revela)
+    meme_1.addEventListener('mouseout', sair_some)
+
+    meme_2.addEventListener('dblclick', dblclick_revela2)
+    meme_2.addEventListener('mousemove', mousemove_some2)
+    meme_2.addEventListener('click', clicar_revela2)
+
+    meme_3.addEventListener('mousedown', down_revela3)
+    meme_3.addEventListener('mouseup', up_some3)
+
+    meme_4.addEventListener('mouseenter', entrar_revela4)
+    meme_4.addEventListener('mouseout', sair_some4)
+
+    meme_5.addEventListener('mouseenter', entrar_revela5)
+    meme_5.addEventListener('click', clicar_some5)
+
+    meme_6.addEventListener('mouseenter', entrar_revela6)
+    meme_6.addEventListener('dblclick', dblclick_some6)
+
+    meme_7.addEventListener('contextmenu', entrar_revela7)
+    meme_7.addEventListener('mouseout', sair_some7)
+
+    meme_8.addEventListener('mouseenter', entrar_revela8)
+    meme_8.addEventListener('mouseout', sair_some8)
+    
+    meme_9.addEventListener('mouseenter', entrar_revela9)
+    meme_9.addEventListener('mouseout', sair_some9)
+
+    meme_10.addEventListener('mouseenter', entrar_revela10)
+    meme_10.addEventListener('mouseout', sair_some10)
+    
+    button.addEventListener('click', button_click)
+    
+
+
+
+    function button_click() {
+
+        meme_1.style.backgroundImage = "url('https://i.pinimg.com/222x/a3/1c/35/a31c354e1778b79b14dd087589359fb2.jpg')"
+        meme_1.innerText = ''
+
+        meme_2.style.backgroundImage = "url('https://i.pinimg.com/236x/41/99/1b/41991b268aa7fbb1f0a1b91241072b9f.jpg')"
+        meme_2.innerText = ''
+
+
+        meme_3.style.backgroundImage = "url('https://img.wattpad.com/649e40c176ac29fe0dd6e74ababd9ee6645d9523/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f4a53444354726945634347696a673d3d2d33342e313563653331396632383934323635383732343230363336343437302e6a7067?s=fit&w=720&h=720')"
+        meme_3.innerText = ''
+
+        meme_4.style.backgroundImage = "url('https://i.pinimg.com/236x/a4/a2/7e/a4a27ec11e12e8dd0c0737512edf6d54.jpg')"
+        meme_4.innerText = ''
+
+        meme_5.style.backgroundImage = "url('https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/05/ajuda.jpg?w=718')"
+        meme_5.innerText = ''
+
+        meme_6.style.backgroundImage = "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiGwRJP1nBATtqtO5kyQJIDj-7TRTS7eaD5CdXwjAFkjc6EgiereB6EpEJ2PHRPvYrON0&usqp=CAU')"
+        meme_6.innerText = ''
+
+        meme_7.style.backgroundImage = "url('https://i.pinimg.com/736x/08/f9/02/08f902b7b4331c8ffb17bf5667e2ddd6.jpg')"
+        meme_7.innerText = ''
+
+        meme_8.style.backgroundImage = "url('https://i.pinimg.com/736x/76/af/0b/76af0bc5a87a93aedb4b54c68e37c194.jpg')"
+        meme_8.innerText = ''
+
+        meme_9.style.backgroundImage = "url('https://i.pinimg.com/736x/97/eb/0c/97eb0c69740251e27bc1293c3f3d7cb3.jpg')"
+        meme_9.innerText = ''
+
+        meme_10.style.backgroundImage = "url('https://i.pinimg.com/736x/67/dd/0d/67dd0d00c4a6dadff70a5c0309c2a5c2.jpg')"
+        meme_10.innerText = ''
+    }
+
+
+    // function de cada meme
+
+    //meme 1
+    function entrar_revela() {
+
+        meme_1.innerText = 'Tá ansioso?... clica ai'
+    }
+
+    function clicar_revela() {
+
+        meme_1.style.backgroundImage = "url('https://i.pinimg.com/222x/a3/1c/35/a31c354e1778b79b14dd087589359fb2.jpg')"
+        meme_1.innerText = ''
+    }
+
+    function sair_some() {
+        meme_1.style.backgroundImage = ''
+        meme_1.style.backgroundColor = 'black';
+        meme_1.innerText = 'Descubra o meme escondido...'
+    }
+
+    //meme 2
+
+    function clicar_revela2() {
+        meme_2.innerText = 'clica denovo ai...'
+    }
+
+    function dblclick_revela2() {
+        meme_2.style.backgroundImage = "url('https://i.pinimg.com/236x/41/99/1b/41991b268aa7fbb1f0a1b91241072b9f.jpg')"
+        meme_2.innerText = ''
+    }
+
+    function mousemove_some2() {
+        meme_2.style.backgroundImage = ''
+        meme_2.style.backgroundColor = 'black';
+        meme_2.innerText = 'Descubra o meme escondido...'
+    }
+
+
+    //meme 3
+
+
+    function down_revela3() {
+        meme_3.style.backgroundImage = "url('https://img.wattpad.com/649e40c176ac29fe0dd6e74ababd9ee6645d9523/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f776174747061642d6d656469612d736572766963652f53746f7279496d6167652f4a53444354726945634347696a673d3d2d33342e313563653331396632383934323635383732343230363336343437302e6a7067?s=fit&w=720&h=720')"
+        meme_3.innerText = ''
+
+    }
+
+    function up_some3() {
+        meme_3.style.backgroundImage = ''
+        meme_3.style.backgroundColor = 'black';
+        meme_3.innerText = 'Descubra o meme escondido...'
+
+    }
+
+    function entrar_revela4() {
+        meme_4.style.backgroundImage = "url('https://i.pinimg.com/236x/a4/a2/7e/a4a27ec11e12e8dd0c0737512edf6d54.jpg')"
+        meme_4.innerText = ''
+    }
+
+    function sair_some4() {
+        meme_4.style.backgroundImage = ''
+        meme_4.style.backgroundColor = 'black';
+        meme_4.innerText = 'Descubra o meme escondido...'
+    }
+
+    function entrar_revela5() {
+        meme_5.style.backgroundImage = "url('https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/05/ajuda.jpg?w=718')"
+        meme_5.innerText = ''
+    }
+    function clicar_some5() {
+        meme_5.style.backgroundImage = ''
+        meme_5.style.backgroundColor = 'black';
+        meme_5.innerText = 'Descubra o meme escondido...'
+
+    }
+
+    function entrar_revela6() {
+        meme_6.style.backgroundImage = "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiGwRJP1nBATtqtO5kyQJIDj-7TRTS7eaD5CdXwjAFkjc6EgiereB6EpEJ2PHRPvYrON0&usqp=CAU')"
+        meme_6.innerText = ''
+    }
+    function dblclick_some6() {
+        meme_6.style.backgroundImage = ''
+        meme_6.style.backgroundColor = 'black';
+        meme_6.innerText = 'Descubra o meme escondido...'
+
+    }
+
+    function entrar_revela7() {
+        meme_7.style.backgroundImage = "url('https://i.pinimg.com/736x/08/f9/02/08f902b7b4331c8ffb17bf5667e2ddd6.jpg')"
+        meme_7.innerText = ''
+
+        
+    }
+    function sair_some7() {
+        meme_7.style.backgroundImage = ''
+        meme_7.style.backgroundColor = 'black';
+        meme_7.innerText = 'Descubra o meme escondido...'
+
+    }
+
+    function entrar_revela8() {
+        meme_8.style.backgroundImage = "url('https://i.pinimg.com/736x/76/af/0b/76af0bc5a87a93aedb4b54c68e37c194.jpg')"
+        meme_8.innerText = ''
+    }
+    function sair_some8() {
+        meme_8.style.backgroundImage = ''
+        meme_8.style.backgroundColor = 'black';
+        meme_8.innerText = 'Descubra o meme escondido...'
+
+    }
+
+
+    function entrar_revela9() {
+        meme_9.style.backgroundImage = "url('https://i.pinimg.com/736x/97/eb/0c/97eb0c69740251e27bc1293c3f3d7cb3.jpg')"
+        meme_9.innerText = ''
+    }
+    function sair_some9() {
+        meme_9.style.backgroundImage = ''
+        meme_9.style.backgroundColor = 'black';
+        meme_9.innerText = 'Descubra o meme escondido...'
+
+    }
+
+    function entrar_revela10() {
+        meme_10.style.backgroundImage = "url('https://i.pinimg.com/736x/67/dd/0d/67dd0d00c4a6dadff70a5c0309c2a5c2.jpg')"
+        meme_10.innerText = ''
+    }
+    function sair_some10() {
+        meme_10.style.backgroundImage = ''
+        meme_10.style.backgroundColor = 'black';
+        meme_10.innerText = 'Descubra o meme escondido...'
+
+    }
+
+</script>
+
+</html>
